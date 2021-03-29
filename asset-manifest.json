@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/ignite/static/js/main.b79f4e1d.chunk.js",
+    "main.js.map": "/ignite/static/js/main.b79f4e1d.chunk.js.map",
+    "runtime-main.js": "/ignite/static/js/runtime-main.154a4fe1.js",
+    "runtime-main.js.map": "/ignite/static/js/runtime-main.154a4fe1.js.map",
+    "static/js/2.6790306e.chunk.js": "/ignite/static/js/2.6790306e.chunk.js",
+    "static/js/2.6790306e.chunk.js.map": "/ignite/static/js/2.6790306e.chunk.js.map",
+    "static/js/3.c75d025c.chunk.js": "/ignite/static/js/3.c75d025c.chunk.js",
+    "static/js/3.c75d025c.chunk.js.map": "/ignite/static/js/3.c75d025c.chunk.js.map",
+    "index.html": "/ignite/index.html",
+    "static/js/2.6790306e.chunk.js.LICENSE.txt": "/ignite/static/js/2.6790306e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.154a4fe1.js",
+    "static/js/2.6790306e.chunk.js",
+    "static/js/main.b79f4e1d.chunk.js"
+  ]
+}
