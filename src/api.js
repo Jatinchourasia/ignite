@@ -1,9 +1,8 @@
 require("dotenv").config();
-const apikey = process.env.API_KEY;
-// base url
-const base_url = `https://api.rawg.io/api/`;
+//Base URL
+const base_url = "https://api.rawg.io/api/";
 
-// getting date
+//Getting the date
 const getCurrentMonth = () => {
   const month = new Date().getMonth() + 1;
   if (month < 10) {
@@ -12,8 +11,9 @@ const getCurrentMonth = () => {
     return month;
   }
 };
+//Getting the date
 const getCurrentDay = () => {
-  const day = new Date().getDay();
+  const day = new Date().getDate();
   if (day < 10) {
     return `0${day}`;
   } else {
@@ -21,16 +21,18 @@ const getCurrentDay = () => {
   }
 };
 
-// dd/mm/yyyy
-const currentDay = getCurrentDay();
-const currentMonth = getCurrentMonth();
+//Current day/month/year
 const currentYear = new Date().getFullYear();
+const currentMonth = getCurrentMonth();
+const currentDay = getCurrentDay();
 const currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
 const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`;
-//  constom request for popular games
+const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 
-const popular_games = `games?key=${apikey}&date=${currentDate},&ordering=-rating&page_size=10`;
+const popular_games = `games?key=${process.env.REACT_APP_API_KEY}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
+const upcoming_games = `games?key=${process.env.REACT_APP_API_KEY}&dates=${lastYear},${nextYear}&ordering=-added&page_size=10`;
+const new_games = `games?key=${process.env.REACT_APP_API_KEY}&dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
 
-const popularGameUrl = () => `${base_url}${popular_games}`;
-
-console.log(popularGameUrl());
+export const popularGamesURL = () => `${base_url}${popular_games}`;
+export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
+export const newGamesURL = () => `${base_url}${new_games}`;
