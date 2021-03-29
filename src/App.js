@@ -1,15 +1,13 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { loadGames } from "./actions/gameAction";
-
+import GlobalStyles from "./components/GlobalStyles";
+// components and pages
+import Home from "./pages/Home";
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(loadGames());
-  });
   return (
     <div className="App">
+      <GlobalStyles />
       <h1>Hello Ignite</h1>
+      <Home />
     </div>
   );
 }
