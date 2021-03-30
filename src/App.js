@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyles />
-      <h1>Hello Ignite</h1>
+      <h1>Ignite</h1>
       <Home />
     </div>
   );

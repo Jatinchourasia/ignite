@@ -34,7 +34,15 @@ h3{
     padding: 1.5rem;
 }
 
-
+p{
+    font-size:1.2rem;
+    line-height:200%;
+    color:#696969
+}
+a{
+    text-decoration: none;
+    color: #333
+}
 `;
 
 export default GlobalStyles;
