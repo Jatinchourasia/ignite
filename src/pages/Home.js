@@ -3,9 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../actions/gameAction";
 // components
 import Game from "../components/Game";
+import GameDetail from "../components/GameDetail";
+
+// styling
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
+
 const Home = () => {
+  // get the current location
+  const location = useLocation();
+  // location tells where we are in the page mens athe adress
+  const pathId = location.pathname.split("/")[2];
+
+  // fetch games
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadGames());
@@ -15,6 +26,10 @@ const Home = () => {
 
   return (
     <GameList>
+      {pathId && <GameDetail />}
+
+      {/* if PathId is available render GameDetail */}
+
       <h2>Popular Games</h2>
       <Games>
         {popular.map((game) => (

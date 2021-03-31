@@ -8,10 +8,11 @@ const GlobalStyles = createGlobalStyle`
 }
 
 html{
-    &::--webkit-scrollbar{
+    
+    &::-webkit-scrollbar{
         width: 0.5rem;
     }
-    &::--webkit-scrollbar-thumb{
+    &::-webkit-scrollbar-thumb{
 
       background-color:darkgray
     }
@@ -31,7 +32,7 @@ h2{
 h3{
     font-size:1.3rem;
     color: #333;
-    padding: 1.5rem;
+    padding: 1.5rem 0rem;
 }
 
 p{
@@ -42,6 +43,9 @@ p{
 a{
     text-decoration: none;
     color: #333
+}
+img{
+    display: block;
 }
 `;
 
