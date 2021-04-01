@@ -69,10 +69,12 @@ const GameDetail = ({ pathId }) => {
       {!isLoading && (
         <CardShadow className="shadow" onClick={exitDetailHandler}>
           <Detail layoutId={pathId}>
+                <h1>{game.name}</h1>
+            
             <Stats>
               <div className="rating">
-                <h3>{game.name}</h3>
                 <p>Rating: {game.rating}</p>
+                <br/>
                 {getStars()}
               </div>
               <Info>
@@ -91,9 +93,13 @@ const GameDetail = ({ pathId }) => {
               <img src={game.background_image} alt="image" />
             </Media>
             <Description>
+               <h1>Details</h1>
+               <br />
               <p>{game.description_raw}</p>
             </Description>
             <div className="gallary">
+            <h1>Screenshots</h1>
+               <br />
               {screen.data.results.map((screen) => (
                 <img key={screen.id} src={screen.image} alt="screenshot" />
               ))}
@@ -122,40 +128,73 @@ const CardShadow = styled(motion.div)`
   ::-webkit-scrollbar-track {
     background: white;
   }
+  display:flex;
+  justify-content:center;
+  align-items: center;
 `;
 
 const Detail = styled(motion.div)`
-  width: 80%;
-  border-radius: 1rem;
+  
+  width: 80vw;
+  height: 90vh;
   padding: 2rem 5rem;
+    
+  border-radius: 1rem;
+  
   background: white;
   position: absolute;
-  left: 10%;
+  
+  
   color: black;
+  overflow-y:scroll;
+  overflow-x:hidden;
+  h1{
+    margin: 0.5rem 0
+  }
   img {
     width: 100%;
   }
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #ff7676;
+  }
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  
 `;
 
 const Stats = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  text-align: left;
+  align-self: center;
+   flex-flow: row wrap;
+
+p{
+  padding-top: 2rem ;
+}
   img {
     width: 2rem;
     height: 2rem;
     display: inline;
   }
+  
 `;
 
 const Info = styled(motion.div)`
-  text-align: center;
+  text-align: left;
 `;
 const Platforms = styled(motion.div)`
   display: flex;
+  
   justify-content: space-evenly;
   img {
-    margin-left: 3rem;
+    margin-right: 2rem;
   }
 `;
 
@@ -169,4 +208,8 @@ const Media = styled(motion.div)`
 const Description = styled(motion.div)`
   margin: 5rem 0rem;
 `;
+
+
+
+
 export default GameDetail;
