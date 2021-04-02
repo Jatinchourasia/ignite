@@ -33,18 +33,24 @@ const Home = () => {
 
         {/* if PathId is available render GameDetail */}
 
-        <h2>Searched Games</h2>
-        <Games>
-          {searched.map((game) => (
-            <Game
-              name={game.name}
-              released={game.released}
-              id={game.id}
-              image={game.background_image}
-              key={game.id}
-            ></Game>
-          ))}
-        </Games>
+        {searched.length ? (
+          <div className="searched">
+            <h2>Searched Games</h2>
+            <Games>
+              {searched.map((game) => (
+                <Game
+                  name={game.name}
+                  released={game.released}
+                  id={game.id}
+                  image={game.background_image}
+                  key={game.id}
+                ></Game>
+              ))}
+            </Games>
+          </div>
+        ) : (
+          ""
+        )}
         <h2>Popular Games</h2>
         <Games>
           {popular.map((game) => (

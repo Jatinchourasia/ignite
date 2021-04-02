@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import GlobalStyles from "./components/GlobalStyles";
-import { Route, useHistory } from "react-router-dom";
+import { Route} from "react-router-dom";
 
 import Nav from "./components/nav";
 // components and pages
